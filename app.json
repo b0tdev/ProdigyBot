@@ -1,0 +1,9 @@
+{
+  "name": "ProdigyBot",
+  "description": "A simple discord bot!",
+  "repository": "https://github.com/b0tdev/ProdigyBot",
+  "env": {
+    "TOKEN": {
+      "description": "Your discord bot's token.",
+      "required": true
+    },
