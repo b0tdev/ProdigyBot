@@ -16,53 +16,6 @@ formatter = logging.Formatter("%(filename)s - %(levelname)s: %(message)s")
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-    @bot.commands()
-    async def uptime(self) -> str:
-        now = datetime.utcnow()
-        delta = now - self.start_time
-        hours, remainder = divmod(int(delta.total_seconds()), 3600)
-        minutes, seconds = divmod(remainder, 60)
-        days, hours = divmod(hours, 24)
-
-        fmt = "{h}h {m}m {s}s"
-        if days:
-            fmt = "{d}d " + fmt
-
-        return fmt.format(d=days, h=hours, m=minutes, s=seconds)
-
-    def _configure_logging(self):
-        level_text = self.config.log_level.upper()
-        logging_levels = {
-            "CRITICAL": logging.CRITICAL,
-            "ERROR": logging.ERROR,
-            "WARNING": logging.WARNING,
-            "INFO": logging.INFO,
-            "DEBUG": logging.DEBUG,
-        }
-
-        log_file_name = self.config.token.split(".")[0]
-        ch_debug = logging.FileHandler(
-            os.path.join(temp_dir, f"{log_file_name}.log"), mode="a+"
-        )
-
-        ch_debug.setLevel(logging.DEBUG)
-        formatter_debug = FileFormatter(
-            "%(asctime)s %(filename)s - " "%(levelname)s: %(message)s",
-            datefmt="%Y-%m-%d %H:%M:%S",
-        )
-        ch_debug.setFormatter(formatter_debug)
-        logger.addHandler(ch_debug)
-
-        log_level = logging_levels.get(level_text)
-        logger.info(LINE)
-        if log_level is not None:
-            logger.setLevel(log_level)
-            ch.setLevel(log_level)
-            logger.info(info("Logging level: " + level_text))
-        else:
-            logger.info(error("Invalid logging level set. "))
-            logger.info(info("Using default logging level: INFO"))
-
 bot = commands.Bot(command_prefix='.')
 
 @bot.event
@@ -190,4 +143,8 @@ async def bitcoin(ctx):
         response = json.loads(response)
         await ctx.send("Bitcoin price is: $" + response['bpi']['USD']['rate'])
 
-bot.run('token')
+import uvloop
+
+        uvloop.install()
+    bot = ProdigyBot()
+    bot.run()
