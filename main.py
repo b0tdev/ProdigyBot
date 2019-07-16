@@ -3,7 +3,8 @@ import asyncio
 import aiohttp
 import json
 from discord import Game
-from discord.ext.commands import Bot
+from discord.ext import commands
+import bot
 import time
 
 bot = commands.Bot(command_prefix='.')
