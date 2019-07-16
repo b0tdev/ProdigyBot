@@ -133,4 +133,4 @@ async def bitcoin(ctx):
         response = json.loads(response)
         await ctx.send("Bitcoin price is: $" + response['bpi']['USD']['rate'])
 
-bot.run('TOKEN')
+bot.run(process.env('TOKEN'))
