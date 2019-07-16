@@ -16,8 +16,8 @@ formatter = logging.Formatter("%(filename)s - %(levelname)s: %(message)s")
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-    @property
-    def uptime(self) -> str:
+    @bot.commands()
+    async def uptime(self) -> str:
         now = datetime.utcnow()
         delta = now - self.start_time
         hours, remainder = divmod(int(delta.total_seconds()), 3600)
