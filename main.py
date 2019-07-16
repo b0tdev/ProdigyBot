@@ -122,4 +122,4 @@ async def square(ctx, number):
     squared_value = int(number) * int(number)
     await ctx.send(str(number) + " squared is " + str(squared_value))
     
-bot.run('TOKEN') #TODO : INSERT TOKEN
+bot.run('NTk5ODkzNjc1OTYyNTMxODUx.XS3OKg.WryuMZX7-Vo-cXh3I9HiV5csabg')
