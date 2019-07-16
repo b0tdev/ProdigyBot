@@ -1,7 +1,9 @@
-import discord
-from discord.ext import commands
 import random
 import asyncio
+import aiohttp
+import json
+from discord import Game
+from discord.ext.commands import Bot
 import time
 
 bot = commands.Bot(command_prefix='.')
@@ -122,4 +124,13 @@ async def square(ctx, number):
     squared_value = int(number) * int(number)
     await ctx.send(str(number) + " squared is " + str(squared_value))
     
+@bot.command()
+async def bitcoin(ctx):
+    url = 'https://api.coindesk.com/v1/bpi/currentprice/BTC.json'
+    async with aiohttp.ClientSession() as session:  # Async HTTP request
+        raw_response = await session.get(url)
+        response = await raw_response.text()
+        response = json.loads(response)
+        await ctx.send("Bitcoin price is: $" + response['bpi']['USD']['rate'])
+
 bot.run('NTk5ODkzNjc1OTYyNTMxODUx.XS3OKg.WryuMZX7-Vo-cXh3I9HiV5csabg')
