@@ -5,16 +5,7 @@ import asyncio
 import aiohttp
 import json
 import time
-import logging
-
-logger = logging.getLogger("ProdigyBot")
-logger.setLevel(logging.INFO)
-
-ch = logging.StreamHandler(stream=sys.stdout)
-ch.setLevel(logging.INFO)
-formatter = logging.Formatter("%(filename)s - %(levelname)s: %(message)s")
-ch.setFormatter(formatter)
-logger.addHandler(ch)
+import os
 
 bot = commands.Bot(command_prefix='.')
 
@@ -143,8 +134,4 @@ async def bitcoin(ctx):
         response = json.loads(response)
         await ctx.send("Bitcoin price is: $" + response['bpi']['USD']['rate'])
 
-import uvloop
-
-        uvloop.install()
-    bot = ProdigyBot()
-    bot.run()
+bot.run(os.getenv('TOKEN'))
