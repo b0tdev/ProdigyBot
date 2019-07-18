@@ -1,3 +1,0 @@
-- `Patreon <https://www.patreon.com/PrabaRock7>`_
-- `Discord PrabaRock7#3945`
-- `API Reference <https://www.github.com/Rapptz/discord.py>`_
