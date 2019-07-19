@@ -15,6 +15,8 @@ async def on_ready():
 	print('Hosted using Heroku')
 	print('Aythor - PrabaRock7#3945')
 	print('Version - 1.0.0')
+        await
+bot.change_presence(status=discord.Status.online, activity=discord.Game(name=".help for more info"))
 	
 async def on_member_join(self, member):
         guild = member.guild
