@@ -12,3 +12,5 @@ ProdigyBot
 About ProdigyBot
 ----------------
 
+ProdigyBot is Very Simple discord bot. It is made using Python. For More info Contact me on Discord ;- **PrabaRock7#3945**. It is in development and we will make it more beautiful. List of Commands will be added.
+
