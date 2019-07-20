@@ -93,7 +93,7 @@ async def invitelink(ctx):
 	
 @bot.command()
 async def supportserver(ctx):
-	await ctx.send("https://discord.gg/Me3bmNc")
+	await ctx.send("https://discordapp.com/invite/V8RT3pp")
 	
 @bot.command()
 async def gitrepo(ctx):
