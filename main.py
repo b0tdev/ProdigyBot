@@ -46,7 +46,7 @@ value="Hello, Im ProdigyBot, My Owner is PrabaRock7#3945, Support him on [Patreo
         embed.add_field(name="Thanks to", value="**Team NKVV Coders for supporting me, Thank you my frnds AjProCoder, VickRock1py, DarshanCodingAlways**")
         embed.add_field(name="Author/Ceator", value="PrabaRock7#3945, AjProCoder, VickRock1py, DarshanCodingAlways")
         embed.add_field(name="Bot Links", value="[Patreon](https://patreon.com/PrabaRock7), [GitHub](https://github.com/b0tdev/ProdigyBot), [Support Server](https://discord.gg/V8RT3pp)")
-        await message.channel.send(content=None, embed=embed)
+        await message.channel.send(embed=embed)
      
 @bot.command()
 async def help(ctx):
