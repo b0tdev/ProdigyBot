@@ -1,4 +1,4 @@
-#pylint:disable=E0001
+# Main Code
 import discord
 from discord.ext import commands
 
@@ -177,4 +177,4 @@ async def user(ctx, member:discord.User = None):
     role = member.top_role
     await ctx.channel.send(f"{pronoun} name is {name}. {pronoun} status is {status}. They joined at {joined}. {pronoun} rank is {role}.")
     
-bot.run("NjAyNDc2MDA0MTMyMjU3Nzky.XTRZwQ.YLxY-tiXTmGCCC6mBzj4Taw0wik")
+bot.run(os.getenv("TOKEN"))
