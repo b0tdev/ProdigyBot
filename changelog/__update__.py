@@ -22,7 +22,7 @@ async def on_ready():
 	print('Looged in', bot.user.name, bot.user.id, 'Powered by Team-NKVV.Coders')
 	print('Hosted using Heroku')
 	print('Aythor - PrabaRock7#3945')
-	print('Version - 1.0.1')
+	print('Version - 1.0.2')
 	await bot.change_presence(status=discord.Status.online, activity=discord.Game(name="ProdigyBot On Strike"))
 
 async def on_member_join(self, member):
